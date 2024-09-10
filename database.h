@@ -1,11 +1,7 @@
-//
-// Created by flassabe on 16/11/2021.
-//
+#ifndef LP25_PROJET_WIP_DATABASE_H
+#define LP25_PROJET_WIP_DATABASE_H
 
-#ifndef _DATABASE_H
-#define _DATABASE_H
-
-int check_db_directory(char *name);
 void create_db_directory(char *name);
+void recursive_rmdir(char *dirname);
 
-#endif //_DATABASE_H
+#endif //LP25_PROJET_WIP_DATABASE_H

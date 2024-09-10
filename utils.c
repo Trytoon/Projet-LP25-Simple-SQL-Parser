@@ -1,7 +1,3 @@
-//
-// Created by flassabe on 16/11/2021.
-//
-
 #include "utils.h"
 
 /*!
@@ -13,5 +9,28 @@
  *  \return a pointer to the full path. Its content must be freed by make_full_path caller.
  */
 char *make_full_path(char *path, char *basename) {
+
+    char temp_path[1000] = "";
+
+    if (basename != NULL && path == NULL) {
+        return basename;
+    } else if (basename) {
+        strcat(temp_path, path);
+        char *full_path = strcat(temp_path, basename);
+        return full_path;
+    }
+
     return NULL;
+}
+
+bool directory_exists(char *path) {
+
+    if(!path) return false;
+
+    DIR *my_dir = opendir(path);
+    if (my_dir) {
+        closedir(my_dir);
+        return true;
+    }
+    return false;
 }

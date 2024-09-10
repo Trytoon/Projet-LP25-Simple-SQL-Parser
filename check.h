@@ -1,11 +1,11 @@
-//
-// Created by flassabe on 19/11/2021.
-//
 
-#ifndef _CHECK_H
-#define _CHECK_H
+#ifndef LP25_PROJET_WIP_CHECK_H
+#define LP25_PROJET_WIP_CHECK_H
 
 #include "sql.h"
+#include "table.h"
+#include <stdio.h>
+#include <limits.h>
 
 bool check_query(query_result_t *query);
 
@@ -26,4 +26,5 @@ bool is_int(char *value);
 bool is_float(char *value);
 bool is_key(char *value);
 
-#endif //_CHECK_H
+
+#endif //LP25_PROJET_WIP_CHECK_H

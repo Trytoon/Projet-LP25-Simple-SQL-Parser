@@ -1,15 +1,16 @@
-//
-// Created by flassabe on 16/11/2021.
-//
+#ifndef LP25_PROJET_WIP_UTILS_H
+#define LP25_PROJET_WIP_UTILS_H
 
 #include <stdlib.h>
 #include <string.h>
-
-#ifndef _UTILS_H
-#define _UTILS_H
+#include <stdbool.h>
+#include <dirent.h>
+#include <stdio.h>
 
 #define TEXT_LENGTH 150
 #define MAX_FIELDS_COUNT 16
+
+#define MAX_TABLE_RECORD_SIZE TEXT_LENGTH*MAX_FIELDS_COUNT
 
 typedef enum {
     TYPE_UNKNOWN,
@@ -48,7 +49,6 @@ typedef struct {
 typedef enum {
     OP_OR,
     OP_AND,
-    OP_ERROR
 } operator_t;
 
 typedef struct {
@@ -57,5 +57,6 @@ typedef struct {
 } filter_t;
 
 char *make_full_path(char *path, char *basename);
+bool directory_exists(char *path);
 
-#endif //_UTILS_H
+#endif //LP25_PROJET_WIP_UTILS_H
